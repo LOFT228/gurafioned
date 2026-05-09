@@ -1,0 +1,3 @@
+[submodule "packages/zerion-cli"]
+	path = packages/zerion-cli
+	url = https://github.com/zeriontech/zerion-ai.git
