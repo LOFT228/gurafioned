@@ -1,0 +1,24 @@
+{
+  "name": "routeguardian",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Solana-native autonomous swap agent with scoped policies, executing through the Zerion CLI.",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test",
+    "api": "pnpm --filter @routeguardian/api",
+    "web": "pnpm --filter @routeguardian/web",
+    "shared": "pnpm --filter @routeguardian/shared"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3"
+  }
+}

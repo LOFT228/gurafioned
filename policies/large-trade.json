@@ -1,0 +1,21 @@
+{
+  "name": "large-trade-policy",
+  "tier": "large",
+  "usdRange": { "min": 5000, "max": null },
+  "maxSlippagePct": 0.5,
+  "maxPriceImpactPct": 0.5,
+  "maxNotionalUsd": 100000,
+  "dailySpendCapUsd": 50000,
+  "txTimeoutSec": 240,
+  "allowedFromTokens": ["SOL", "USDC", "USDT"],
+  "allowedToTokens": ["SOL", "USDC", "USDT"],
+  "scoringWeights": { "out": 1.0, "impact": 0.8, "fee": 0.2, "gas": 0.1 },
+  "requiresConfirmation": true,
+  "zerion": {
+    "chains": ["solana"],
+    "expires": "24h",
+    "denyTransfers": true,
+    "denyApprovals": true
+  },
+  "agentTokenEnvVar": "ZERION_AGENT_TOKEN_LARGE"
+}
