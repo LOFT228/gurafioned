@@ -1,0 +1,21 @@
+{
+  "name": "small-trade-policy",
+  "tier": "small",
+  "usdRange": { "min": 0, "max": 500 },
+  "maxSlippagePct": 1.5,
+  "maxPriceImpactPct": 1.5,
+  "maxNotionalUsd": 500,
+  "dailySpendCapUsd": 5000,
+  "txTimeoutSec": 120,
+  "allowedFromTokens": ["SOL", "USDC", "USDT", "JUP", "JTO", "BONK", "WIF"],
+  "allowedToTokens": ["SOL", "USDC", "USDT", "JUP", "JTO", "BONK", "WIF"],
+  "scoringWeights": { "out": 1.0, "impact": 0.4, "fee": 0.2, "gas": 0.05 },
+  "requiresConfirmation": false,
+  "zerion": {
+    "chains": ["solana"],
+    "expires": "7d",
+    "denyTransfers": true,
+    "denyApprovals": true
+  },
+  "agentTokenEnvVar": "ZERION_AGENT_TOKEN_SMALL"
+}

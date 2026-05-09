@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html, body {
+    background: theme(colors.cream.DEFAULT);
+    color: theme(colors.ink.DEFAULT);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .petal {
+    @apply rounded-petal bg-cream border-2 border-ink/10;
+  }
+  .petal-purple {
+    @apply rounded-petal bg-purple-mist border-2 border-purple/30;
+  }
+  .petal-orange {
+    @apply rounded-petal bg-orange-soft border-2 border-orange/40;
+  }
+  .petal-yellow {
+    @apply rounded-petal bg-yellow-soft border-2 border-yellow/50;
+  }
+  .petal-mint {
+    @apply rounded-petal bg-mint-soft border-2 border-mint/50;
+  }
+  .petal-sky {
+    @apply rounded-petal bg-sky-soft border-2 border-sky/50;
+  }
+
+  .btn-chunky {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl
+           border-2 border-ink bg-purple text-cream font-semibold
+           px-6 py-3 shadow-chunky transition-all
+           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-chunky-sm
+           active:translate-x-[6px] active:translate-y-[6px] active:shadow-none
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-chunky-orange {
+    @apply btn-chunky bg-orange text-ink;
+  }
+  .btn-chunky-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl
+           border-2 border-ink bg-cream text-ink font-semibold
+           px-6 py-3 shadow-chunky-sm transition-all
+           hover:bg-cream-deep;
+  }
+}
