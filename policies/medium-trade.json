@@ -1,0 +1,21 @@
+{
+  "name": "medium-trade-policy",
+  "tier": "medium",
+  "usdRange": { "min": 500, "max": 5000 },
+  "maxSlippagePct": 1.0,
+  "maxPriceImpactPct": 1.0,
+  "maxNotionalUsd": 5000,
+  "dailySpendCapUsd": 20000,
+  "txTimeoutSec": 180,
+  "allowedFromTokens": ["SOL", "USDC", "USDT"],
+  "allowedToTokens": ["SOL", "USDC", "USDT", "JUP", "JTO"],
+  "scoringWeights": { "out": 1.0, "impact": 0.5, "fee": 0.2, "gas": 0.1 },
+  "requiresConfirmation": false,
+  "zerion": {
+    "chains": ["solana"],
+    "expires": "7d",
+    "denyTransfers": true,
+    "denyApprovals": true
+  },
+  "agentTokenEnvVar": "ZERION_AGENT_TOKEN_MEDIUM"
+}

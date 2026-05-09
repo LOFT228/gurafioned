@@ -1,0 +1,46 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+build/
+out/
+.next/
+.turbo/
+
+# environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# editor
+.vscode/
+.idea/
+.DS_Store
+
+# database
+*.db
+*.db-journal
+apps/api/prisma/dev.db
+apps/api/prisma/dev.db-journal
+
+# zerion local config (NEVER commit)
+.zerion/
+zerion-config.json
+
+# next.js
+next-env.d.ts
+
+# coverage
+coverage/
+
+# misc
+*.tsbuildinfo

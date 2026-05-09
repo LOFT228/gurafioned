@@ -1,0 +1,76 @@
+// RouteGuardian audit ledger.
+// Every intent → decision → execution row is preserved so the dashboard
+// can render the full decision history and the bounty judges can verify
+// the agent reasoned about every swap.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model SwapIntent {
+  id              String    @id @default(cuid())
+  fromToken       String
+  toToken         String
+  fromMint        String
+  toMint          String
+  fromSymbol      String
+  toSymbol        String
+  amount          String
+  usdValue        Float
+  chain           String    @default("solana")
+  source          String
+  label           String?
+  createdAt       DateTime  @default(now())
+  decision        Decision?
+}
+
+model Decision {
+  id               String      @id @default(cuid())
+  intentId         String      @unique
+  intent           SwapIntent  @relation(fields: [intentId], references: [id])
+  policyName       String
+  policyTier       String
+  status           String
+  rejectionCode    String?
+  rejectionReason  String?
+  scoredQuotes     String      // JSON-serialized ScoredQuote[]
+  chosenSource     String?
+  reasoning        String      // JSON-serialized ReasoningStep[]
+  createdAt        DateTime    @default(now())
+  execution        Execution?
+
+  @@index([status])
+  @@index([policyName])
+  @@index([createdAt])
+}
+
+model Execution {
+  id              String    @id @default(cuid())
+  decisionId      String    @unique
+  decision        Decision  @relation(fields: [decisionId], references: [id])
+  agentTokenName  String
+  txHash          String?
+  txStatus        String
+  receivedAmount  String?
+  cliStdout       String?
+  cliStderr       String?
+  createdAt       DateTime  @default(now())
+
+  @@index([txStatus])
+}
+
+model PolicyUsage {
+  id          String   @id @default(cuid())
+  policyName  String
+  day         String
+  spentUsd    Float    @default(0)
+  count       Int      @default(0)
+  updatedAt   DateTime @updatedAt
+
+  @@unique([policyName, day])
+}
