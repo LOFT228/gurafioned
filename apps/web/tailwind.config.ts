@@ -54,8 +54,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['"Inter"', "ui-sans-serif", "system-ui"],
-        display: ['"Inter"', "ui-sans-serif", "system-ui"],
+        sans: ['"Bricolage Grotesque"', "ui-sans-serif", "system-ui"],
+        display: ['"Bricolage Grotesque"', "ui-sans-serif", "system-ui"],
       },
       borderRadius: {
         petal: "2rem",
