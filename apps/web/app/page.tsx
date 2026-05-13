@@ -73,12 +73,12 @@ export default function HomePage() {
         <img
           src="https://framerusercontent.com/images/SUTUrmpseBHvVOgv4OPWcE8bI.svg?width=1534&height=998"
           alt=""
-          className="pointer-events-none absolute -bottom-[32rem] left-1/2 z-0 w-[130vw] max-w-none -translate-x-[62%] opacity-100"
+          className="pointer-events-none absolute -bottom-[32rem] left-1/2 z-0 hidden w-[130vw] max-w-none -translate-x-[62%] opacity-100 sm:block"
         />
         <img
           src="https://framerusercontent.com/images/OLp9denw0v5J16q9OJV2Ys0dZ28.svg?width=588&height=1111"
           alt=""
-          className="pointer-events-none absolute -bottom-[30rem] left-1/2 z-0 w-[45rem] max-w-none -translate-x-[-5%] opacity-100"
+          className="pointer-events-none absolute -bottom-[30rem] left-1/2 z-0 hidden w-[45rem] max-w-none -translate-x-[-5%] opacity-100 sm:block"
         />
       </section>
     </main>
