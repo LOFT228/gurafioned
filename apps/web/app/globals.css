@@ -8,13 +8,13 @@
   }
 
   html, body {
-    background: theme(colors.cream.DEFAULT);
-    color: theme(colors.ink.DEFAULT);
+    background: #121212;
+    color: #121212;
     font-feature-settings: "ss01", "cv11";
   }
 
   h1, h2, h3, h4 {
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: -0.02em;
   }
 }
